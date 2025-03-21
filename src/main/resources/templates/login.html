@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <title>Snake</title>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="logo">
+        Snake<span class="highlight">.am</span>
+    </h1>
+    <p class="score">Your final length was <span class="score-value">92</span></p>
+
+    <form wicket:id="loginForm">
+        <input type="email" class="name-input" placeholder="Email" wicket:id="email" /><br>
+        <input type="password" class="name-input" placeholder="Password" wicket:id="password" /><br>
+        <button class="play-btn" type="submit" wicket:id="button">Login</button>
+    </form>
+
+
+    <div class="bottom-links">
+        <a href="#" class="change-skin">Change Skin</a>
+        <a href="#" class="choose-server">Choose Server</a>
+    </div>
+</div>
+
+</body>
+</html>

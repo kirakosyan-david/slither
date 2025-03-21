@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+}
+
+#gameCanvas {
+    display: block;
+    background-color: #1a1a1a;
+}
+
+#scoreboard {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#leaderboard {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+#leaderboard h2 {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+#leaderboard-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#leaderboard-list li {
+    font-size: 16px;
+    padding: 3px 0;
+}
+
+/* Цвета для разных позиций */
+#leaderboard-list li:nth-child(1) {
+    color: #ffd700; /* Золото */
+}
+
+#leaderboard-list li:nth-child(2) {
+    color: #c0c0c0; /* Серебро */
+}
+
+#leaderboard-list li:nth-child(3) {
+    color: #cd7f32; /* Бронза */
+}

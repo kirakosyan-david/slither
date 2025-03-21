@@ -1,0 +1,90 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Контейнер */
+.container {
+    text-align: center;
+}
+
+/* Логотип */
+.logo {
+    font-size: 48px;
+    font-weight: bold;
+    color: #4caf50;
+}
+
+.logo .highlight {
+    color: #9c27b0;
+}
+
+/* Счет */
+.score {
+    font-size: 20px;
+    color: #aaaaaa;
+    margin-bottom: 20px;
+}
+
+.score-value {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Поле ввода */
+.name-input {
+    padding: 12px;
+    width: 80%;
+    max-width: 300px;
+    border: none;
+    border-radius: 25px;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Кнопка */
+.play-btn {
+    padding: 12px 30px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.play-btn:hover {
+    background-color: #45a049;
+}
+
+/* Ссылки внизу */
+.bottom-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.bottom-links a {
+    color: #9c27b0;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.bottom-links a:hover {
+    color: #ffffff;
+}

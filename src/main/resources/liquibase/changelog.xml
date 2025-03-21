@@ -1,0 +1,51 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="
+                   http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+    <changeSet id="1" author="David">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="users"/>
+            </not>
+        </preConditions>
+        <createTable tableName="users">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="username" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true" />
+            </column>
+            <column name="password" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!-- Создание таблицы snakes -->
+    <changeSet id="2" author="David">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="snakes"/>
+            </not>
+        </preConditions>
+        <createTable tableName="snakes">
+            <column name="id" type="INT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="length" type="INT">
+                <constraints nullable="false" />
+            </column>
+            <column name="ranking" type="INT">
+                <constraints nullable="false" unique="true" />
+            </column>
+            <column name="record" type="INT">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
