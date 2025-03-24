@@ -34,7 +34,6 @@ public class SnakeServiceImpl implements SnakeService {
         Snake savedSnake = snakeRepository.saveAndFlush(snake);
         this.snakeDto = snakeMapper.mapToDto(savedSnake);
 
-        System.out.println("✅ Длина сохранена в базе: " + savedSnake.getLength());
         return this.snakeDto;
     }
 
