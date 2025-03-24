@@ -11,6 +11,7 @@ import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.form.EmailTextField;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.PasswordTextField;
+import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.apache.wicket.util.resource.FileResourceStream;
@@ -38,7 +39,7 @@ public class LoginPage extends WebPage implements IMarkupResourceStreamProvider 
 
                     if (loginUser) {
                         success("Вход выполнен успешно!");
-                        setResponsePage(RegisterPage.class);
+                        setResponsePage(SnakePage.class);
                     }else {
                         error("Неверный email или пароль");
                     }
@@ -53,6 +54,8 @@ public class LoginPage extends WebPage implements IMarkupResourceStreamProvider 
         form.add(new Button("button"));
 
         add(form);
+
+        add(new BookmarkablePageLink<>("registerLink", RegisterPage.class));
 
     }
 

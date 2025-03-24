@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:wicket="http://wicket.apache.org">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slither.io Clone</title>
-    <link rel="stylesheet" href="/static/css/snakeStyles.css" />
+    <title>Snake.am</title>
+    <link rel="stylesheet" type="text/css" href="/css/snakeStyles.css" />
 </head>
 <body>
 
 <canvas id="gameCanvas"></canvas>
 
-<div id="scoreboard">
-    <div>Length: <span id="length">0</span></div>
-    <div>Rank: <span id="rank">0</span></div>
-</div>
+<form wicket:id="snakeForm" id="snakeForm" action="javascript:void(0)">
 
-<div id="leaderboard" style="opacity: 0.2">
-    <h2>Leaderboard</h2>
-    <ol id="leaderboard-list">
-    </ol>
-</div>
+    <div id="scoreboard">
+        <div>Length: <span id="length" wicket:id="length"></span></div>
+        <div>Rank: <span id="rank" wicket:id="rank"></span></div>
+    </div>
+    <input type="submit" value="Eat food" />
 
-<script src="/static/js/scriptSnake.js"></script>
+    <div id="leaderboard" style="opacity: 0.2">
+        <h2>Leaderboard</h2>
+        <ol id="leaderboard-list">
+        </ol>
+    </div>
+
+</form>
+
+<script src="/js/scriptSnake.js"></script>
+
 </body>
 </html>

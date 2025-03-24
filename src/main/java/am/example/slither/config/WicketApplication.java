@@ -5,9 +5,11 @@ import am.example.slither.pages.RegisterPage;
 import org.apache.wicket.Page;
 import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 
 @Component
+@EnableAspectJAutoProxy(proxyTargetClass = true)
 public class WicketApplication extends WebApplication {
 
     @Override

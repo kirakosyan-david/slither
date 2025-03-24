@@ -10,11 +10,13 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.DynamicUpdate;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@DynamicUpdate
 @Entity
 @Table(name = "snakes")
 public class Snake extends EntityBase {
@@ -22,7 +24,7 @@ public class Snake extends EntityBase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    public int length;
+    private int length;
 
     @Column(name = "ranking")
     private int rank;

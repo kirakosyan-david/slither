@@ -29,8 +29,8 @@ public class UserServiceImpl implements UserService {
 
         User user = userMapper.mapToRegister(UserRegisterDto.builder()
                 .username(username)
-                .password(password)
                 .email(email)
+                .password(password)
                 .build());
         userRepository.save(user);
         return true;

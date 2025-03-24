@@ -13,6 +13,7 @@ import org.apache.wicket.markup.html.form.EmailTextField;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.PasswordTextField;
 import org.apache.wicket.markup.html.form.RequiredTextField;
+import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.apache.wicket.util.resource.FileResourceStream;
@@ -52,6 +53,8 @@ public class RegisterPage extends WebPage implements IMarkupResourceStreamProvid
         form.add(new Button("button"));
 
         add(form);
+
+        add(new BookmarkablePageLink<>("loginLink", LoginPage.class));
 
     }
 
