@@ -59,20 +59,11 @@ public class SnakePage extends WebPage implements IMarkupResourceStreamProvider 
                 if (isSaving) return;
                 isSaving = true;
 
-                System.out.println("✅ AJAX вызван!");
-
-                // Логика поедания еды и обновления состояния змейки
                 snakeService.onFoodEaten();
                 snakeDto = snakeService.getSnakeDto();
-
-                System.out.println("✅ Новая длина после сохранения: " + snakeDto.getLength());
-                System.out.println("✅ Новый ранг после сохранения: " + snakeDto.getRank());
-
-                // 🔥 Явное обновление компонентов интерфейса
                 target.add(lengthLabel);
                 target.add(rankLabel);
 
-                // 🔥 Обновление интерфейса напрямую через JS
                 target.appendJavaScript("updateGameState(" + snakeDto.getLength() + ", " + snakeDto.getRank() + ");");
 
                 isSaving = false;
@@ -80,7 +71,7 @@ public class SnakePage extends WebPage implements IMarkupResourceStreamProvider 
 
             @Override
             protected void onError(AjaxRequestTarget target) {
-                System.out.println("❌ AJAX ошибка!");
+                System.out.println("AJAX ошибка!");
                 isSaving = false;
             }
         });
@@ -88,20 +79,16 @@ public class SnakePage extends WebPage implements IMarkupResourceStreamProvider 
         add(form);
     }
 
-    // ✅ Подключаем CSS и JS
     @Override
     public void renderHead(IHeaderResponse response) {
         super.renderHead(response);
         String contextPath = getRequestCycle().getRequest().getContextPath();
 
-        // Подключаем CSS
         response.render(CssHeaderItem.forUrl(contextPath + "/css/snakeStyles.css"));
 
-        // Подключаем JS (отложенная загрузка)
         response.render(JavaScriptHeaderItem.forUrl(contextPath + "/js/scriptSnake.js").setDefer(true));
     }
 
-    // ✅ Указываем путь к HTML-шаблону
     @Override
     public IResourceStream getMarkupResourceStream(MarkupContainer container, Class<?> aClass) {
         return new FileResourceStream(
